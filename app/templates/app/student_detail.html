@@ -1,0 +1,25 @@
+{% extends 'app/base.html' %}
+
+{% block body %}
+    <h1>Student Details</h1>
+    <table border="2">
+        <thead>
+            <th>Name</th>
+            <th>School</th>
+        </thead>
+        <tr>
+            <td>{{student.name}}</td>
+            <td>{{student.school}}</td>
+        </tr>
+    </table>
+
+    <p></p>
+    <div>
+        <div class="container">
+            <p>
+                <a class="btn btn-warning" href="{% url 'app:student_update' student.id %}">Update</a>
+                <a class="btn btn-danger" href="{% url 'app:student_delete' student.id %}">Delete</a>
+            </p>
+        </div>
+    </div>
+{% endblock %} 
